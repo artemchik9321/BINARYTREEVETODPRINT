@@ -1,4 +1,7 @@
 #include "Tree.h"
+#include <iostream>
+using namespace std;
+
 void Tree::insert(int value, Node*& node)
 {
 	if (node == nullptr) 
@@ -25,5 +28,18 @@ void Tree::insert(int value)
 }
 void Tree::Print()
 {
+	cout << "Tree v poriadke vozrostaniya" << endl;
+	Print(_root);
+	cout << endl;
+}
+void Tree::Print(Node* node) 
+{
+	if (node == nullptr) 
+	{
+		return;
+	}
+	Print(node->left);
+	cout << " " << node->value << " ";
+	Print(node->right);
 
 }
